@@ -1,19 +1,20 @@
+```
+# Click-to-Copy
 
-# Click-to-Copy JavaScript Script
-
-This is a simple JavaScript script that allows you to create buttons that copy text to the clipboard when clicked. It's a handy utility for providing users with an easy way to copy predefined text snippets.
+This is a simple JavaScript script that allows you to create buttons and links that copy text to the clipboard when clicked. It's a handy utility for providing users with an easy way to copy predefined text snippets.
 
 ## Usage
 
 1. Include the necessary HTML and JavaScript files in your project.
 
-2. Add a `<button>` element with the class `copy-button` to your HTML file. Include two additional attributes:
-   - `data-copy-text`: The text you want to copy when the button is clicked.
-   - `data-tooltip`: (Optional) Tooltip text to show when hovering over the button.
+2. Add a `<button>` element with the class `copy-button` or an `<a>` element with the class `copy-link` to your HTML file. Include two additional attributes:
+   - `data-copy-text`: The text you want to copy when the element is clicked.
+   - `data-tooltip`: (Optional) Tooltip text to show when hovering over the element.
 
 Example:
 ```html
 <button class="copy-button" data-copy-text="Text to be copied" data-tooltip="Click to Copy">Copy</button>
+<a href="#" class="copy-link" data-copy-text="Text to be copied" data-tooltip="Click to Copy">Copy</a>
 ```
 
 3. Include the JavaScript code in your project (usually in a separate `script.js` file).
@@ -22,7 +23,7 @@ Example:
 
 ## How It Works
 
-1. When a `copy-button` is clicked, the JavaScript code extracts the text to be copied from the `data-copy-text` attribute.
+1. When a `copy-button` or `copy-link` is clicked, the JavaScript code extracts the text to be copied from the `data-copy-text` attribute.
 
 2. A temporary `<textarea>` element is created and populated with the text.
 
@@ -52,3 +53,5 @@ Feel free to use, modify, and distribute this script in your projects.
 
 For issues or questions, please open an issue in this repository.
 ```
+
+Make sure to update the class names and attributes in the examples according to your actual implementation.
