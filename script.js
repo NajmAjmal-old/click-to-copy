@@ -1,28 +1,32 @@
 // Get all elements with the "copy-button" class
 const copyButtons = document.querySelectorAll('.copy-button');
+const copyLinks = document.querySelectorAll('.copy-link');
+
+// Function to copy text to the clipboard
+function copyTextToClipboard(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+}
 
 // Iterate through each copy button
 copyButtons.forEach(button => {
-  // Add a click event listener to each button
   button.addEventListener('click', () => {
-    // Get the text to be copied from the "data-copy-text" attribute
     const textToCopy = button.getAttribute('data-copy-text');
+    copyTextToClipboard(textToCopy);
+    console.log('Text has been copied!');
+  });
+});
 
-    // Create a textarea element to hold the text temporarily
-    const textarea = document.createElement('textarea');
-    textarea.value = textToCopy;
-
-    // Append the textarea to the body and select its content
-    document.body.appendChild(textarea);
-    textarea.select();
-
-    // Copy the selected text to the clipboard
-    document.execCommand('copy');
-
-    // Remove the textarea from the body
-    document.body.removeChild(textarea);
-
-    // Alert the user that the text has been copied (you can customize this part)
+// Iterate through each copy link
+copyLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const textToCopy = link.getAttribute('data-copy-text');
+    copyTextToClipboard(textToCopy);
     console.log('Text has been copied!');
   });
 });
