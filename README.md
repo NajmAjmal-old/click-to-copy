@@ -1,32 +1,45 @@
 # Click-to-Copy
 
-This is a simple JavaScript script that allows you to create buttons and links that copy text to the clipboard when clicked. It's a handy utility for providing users with an easy way to copy predefined text snippets.
+This is a simple JavaScript script that allows you to enable click-to-copy functionality on any HTML element. It's a handy utility for providing users with an easy way to copy predefined text snippets.
 
 ## Usage
 
 1. Include the necessary HTML and JavaScript files in your project.
 
-2. Add a `<button>` element with the class `copy-button` or an `<a>` element with the class `copy-link` to your HTML file. Include two additional attributes:
-   - `data-copy-text`: The text you want to copy when the element is clicked.
-   - `data-tooltip`: (Optional) Tooltip text to show when hovering over the element.
+2. Add HTML elements with the class `click-to-copy` (or any class name you prefer) to your HTML file. Include the `data-copy-text` attribute to specify the text to be copied.
 
 Example:
 ```html
-<button class="copy-button" data-copy-text="Text to be copied" data-tooltip="Click to Copy">Copy</button>
-<a href="#" class="copy-link" data-copy-text="Text to be copied" data-tooltip="Click to Copy">Copy</a>
+<div class="click-to-copy" data-copy-text="Text to be copied">Copy</div>
+<p class="click-to-copy" data-copy-text="Another text to be copied">Copy</p>
 ```
 
 3. Include the provided JavaScript code in your project.
 
 4. Customize the alert message to provide user feedback after copying.
 
-### Using the CDN
+## Features
 
-For a quick integration, you can include the minified script using this CDN link:
+### 1. Click-to-Copy on Any HTML Element
 
+With the `click-to-copy` class (or your chosen class name), you can enable the click-to-copy functionality on any HTML element, expanding its usage beyond buttons and links.
+
+### 2. Tooltip Integration
+
+Add tooltips for user clarity. Use the `data-tooltip` attribute to include a tooltip when hovering over the elements.
+
+Example:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/NajmAjmal/click-to-copy@main/ctc_min.js"></script>
+<div class="click-to-copy" data-copy-text="Text to be copied" data-tooltip="Click to Copy">Copy</div>
 ```
+
+### 3. Enhanced User Experience
+
+Users can now click an element with the `click-to-copy` class, and the selected text will be copied to the clipboard. An alert will confirm the successful copy action.
+
+### 4. Compatibility Enhancements
+
+The script acknowledges that `document.execCommand('copy')` might not work in all modern browsers due to security restrictions. Explore alternatives, such as the Clipboard API, if needed.
 
 ## Get Started
 
@@ -37,8 +50,3 @@ Visit the [GitHub repository](https://github.com/NajmAjmal/click-to-copy) to acc
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-**Note:** This script is provided as a simple example. Depending on your needs and the compatibility of the copying method, you might need to explore additional options for copying text to the clipboard.
-
-For issues or questions, please open an issue in this repository.
-```
