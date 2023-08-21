@@ -1,8 +1,7 @@
-// Get all elements with the "copy-button" class
-const copyButtons = document.querySelectorAll('.copy-button');
-const copyLinks = document.querySelectorAll('.copy-link');
+const copyElements = document.querySelectorAll('.click-to-copy');
 
-// Function to copy text to the clipboard
+console.log('Click to copy made by Najm Ajmal');
+
 function copyTextToClipboard(text) {
   const textarea = document.createElement('textarea');
   textarea.value = text;
@@ -12,20 +11,9 @@ function copyTextToClipboard(text) {
   document.body.removeChild(textarea);
 }
 
-// Iterate through each copy button
-copyButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const textToCopy = button.getAttribute('data-copy-text');
-    copyTextToClipboard(textToCopy);
-    console.log('Text has been copied!');
-  });
-});
-
-// Iterate through each copy link
-copyLinks.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const textToCopy = link.getAttribute('data-copy-text');
+copyElements.forEach(element => {
+  element.addEventListener('click', () => {
+    const textToCopy = element.getAttribute('data-copy-text');
     copyTextToClipboard(textToCopy);
     console.log('Text has been copied!');
   });
